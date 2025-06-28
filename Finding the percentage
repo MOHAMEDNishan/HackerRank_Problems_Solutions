@@ -1,0 +1,31 @@
+def average_score(student_marks, query_name):
+    """
+    Function to calculate and print the average score of a student.
+    """
+    if query_name in student_marks:  # Check if the student's name exists in the dictionary
+        scores = student_marks[query_name]  # Retrieve the scores of the student
+        average = sum(scores) / len(scores)  # Calculate the average score
+        print(f"{average:.2f}")  # Print the average rounded to two decimal places
+
+def collect_marks():
+    """
+    Function to collect student data from user input.
+    """
+    n = int(input())  # Input for the number of students
+    student_marks = {}  # Dictionary to store scores for all students
+
+    for _ in range(n):  # Loop to collect data for each student
+        name, *line = input().split()  # Input student name and scores, split into components
+        scores = list(map(float, line))  # Convert scores from strings to floats
+        student_marks[name] = scores  # Add the student's name and scores to the dictionary
+
+    query_name = input()  # Input the name of the student to query
+    return student_marks, query_name
+
+
+if __name__ == '__main__':
+    # Call the collect_marks() function to gather input
+    student_marks, query_name = collect_marks()
+
+    # Call the average_score() function to compute and print the average
+    average_score(student_marks, query_name)
