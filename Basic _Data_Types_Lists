@@ -1,0 +1,31 @@
+if __name__ == '__main__':
+    N = int(input())
+    lst = []
+    
+    for i in range(N):
+        command = input()
+        words = command.split()
+        if words[0] == "insert":
+           words[1] = int(words[1])
+           words[2] = int(words[2])
+           lst.insert(words[1], words[2])
+           
+        elif words[0] == "print":
+            print(lst)
+            
+        elif words[0] == "remove": 
+            words[1] = int(words[1])
+            lst.remove(words[1])
+            
+        elif words[0] == "append": 
+            words[1] = int(words[1])
+            lst.append(words[1])
+        
+        elif words[0] == "sort":
+            lst.sort()
+            
+        elif words[0] == "pop":
+            lst.pop()
+            
+        elif words[0] == "reverse":
+            lst.reverse()
