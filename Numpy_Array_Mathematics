@@ -1,0 +1,19 @@
+import numpy as np
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read Array A
+# We read N lines, split each line, and tell NumPy they are integers
+a = np.array([input().split() for _ in range(n)], int)
+
+# Read Array B
+b = np.array([input().split() for _ in range(n)], int)
+
+# Perform operations and print
+print(a + b)
+print(a - b)
+print(a * b)
+print(a // b)  # Integer Division (Floor Division)
+print(a % b)
+print(a ** b)
